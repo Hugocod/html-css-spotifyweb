@@ -1,4 +1,4 @@
-body {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,6 +10,9 @@ h1 {
 
 /* utility */
 
+.display-none {
+    display: none;
+}
 .display-flex {
     display: flex;
 }
@@ -34,6 +37,10 @@ h1 {
     position: relative;
 }
 
+.pst-fixed {
+    position: fixed;
+}
+
 .border-circle {
     border-radius: 50%;
 }
@@ -52,6 +59,7 @@ h1 {
 .bg-gray {
     background-color: #343841;
 }
+
 .bg-gray-light {
     background-color: #282828;
 }
@@ -65,8 +73,28 @@ h1 {
 }
 
 aside {
-    width: 300px;
     height: calc(100% - 80px);
+    padding: 20px 70px 0px 20px;
+}
+
+aside :is(h1, h2, h3, h4, h5, h6) {
+    color: #7d7f84;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+aside li > img {
+    width: 30px;
+    height: auto;
+}
+
+.user {
+    bottom: 0;
+    left: 0;
+}
+
+.fa-solid {
+    color: white;
 }
 
 main {
@@ -74,11 +102,28 @@ main {
     flex-grow: 1;
 
     overflow-y: scroll;
+
+    /* padding: 0px 20px 0px 20px; */
 }
 
 .top-bar {
     width: 100%;
     height: 80px;
+}
+
+.top-bar button {
+    right: 0;
+    border: 1px solid white;
+    background: none;
+    border-radius: 4rem;
+    padding: 15px 40px;
+    color: white;
+
+    margin-right: 30px;
+}
+
+.top-bar > div {
+    height: 100%;
 }
 
 footer {
@@ -90,7 +135,7 @@ footer {
     left: 0;
 }
 
-ul {
+main ul {
     list-style: none;
     margin-top: 80px;
 
@@ -98,7 +143,7 @@ ul {
     padding: 15px 0px;
 }
 
-ul :is(a) {
+main ul :is(a) {
     color: white;
     text-decoration: none;
 
@@ -107,7 +152,7 @@ ul :is(a) {
 }
 
 figure {
-    width: calc(100% / 6);
+    width: calc(100% / 6 - 10px);
     height: auto;
 
     padding: 0;
@@ -133,4 +178,42 @@ figcaption :is(span) {
     width: 100%;
     height: fit-content;
     gap: 10px;
+}
+
+.logo-short {
+    display: none;
+}
+
+/* tablet */
+@media screen and (max-width: 750px) {
+    figure {
+        width: calc(100% / 4 - 10px);
+    }
+}
+
+/* mobile */
+@media screen and (max-width: 450px) {
+    figure {
+        width: calc(100% / 2 - 10px);
+    }
+
+    aside h1,
+    h3,
+    h2,
+    a,
+    .create-play {
+        display: none;
+    }
+
+    aside {
+        padding: 10px 10px 0px 10px;
+    }
+
+    .logo-short {
+        display: block;
+    }
+
+    .logo-regular {
+        display: none;
+    }
 }

@@ -6,13 +6,83 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>spotifyweb by Hugo</title>
         <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+            integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
     </head>
     <body>
         <div class="wrapper display-flex pst-relative">
-            <aside class="bg-black"></aside>
-            <main class="bg-gray">
-                <!--  <div class="top-bar pst-absolute bg-black-transparent"></div> -->
+            <div class="top-bar pst-relative pst-fixed bg-black-transparent">
+                <div class="display-flex justify-ct-center align-it-center">
+                    <button class="pst-absolute">EFFETTUA L'UPGRADE</button>
+                </div>
+            </div>
 
+            <aside class="bg-black pst-relative">
+                <img
+                    class="logo-regular"
+                    src="spotify/img/logo.svg"
+                    alt="logo"
+                />
+
+                <img
+                    class="logo-short"
+                    src="spotify/img/logo-small.svg"
+                    alt="logo"
+                />
+
+                <ul>
+                    <li class="display-flex align-it-center">
+                        <img src="spotify/img/home.svg" alt="" />
+                        <a href="">Home</a>
+                    </li>
+                    <li class="display-flex align-it-center">
+                        <img src="spotify/img/search.svg" alt="" /><a href=""
+                            >Cerca</a
+                        >
+                    </li>
+                    <li class="display-flex align-it-center">
+                        <img src="spotify/img/libreria.svg" alt="" /><a href=""
+                            >La tua libreria
+                        </a>
+                    </li>
+                </ul>
+
+                <h2>PLAYLIST</h2>
+
+                <div class="create-play display-flex align-it-center">
+                    <i class="fa-solid fa-square-plus"></i>
+                    <h3>Crea Playlist</h3>
+                </div>
+
+                <h3>Nome Playlist</h3>
+                <h3>Nome Playlist</h3>
+                <h3>Nome Playlist</h3>
+                <h3>Nome Playlist</h3>
+                <h3>Nome Playlist</h3>
+                <h3>Nome Playlist</h3>
+                <h3>Nome Playlist</h3>
+
+                <div class="user pst-absolute">
+                    <div class="display-flex align-it-center">
+                        <i class="fa-regular fa-circle-down"></i>
+                        <h3>Crea Playlist</h3>
+                    </div>
+
+                    <hr />
+
+                    <div class="display-flex align-it-center">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h3>Crea Playlist</h3>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="bg-gray">
                 <ul class="display-flex justify-ct-center flex-wrap">
                     <li><a href="">IN EVIDENZA</a></li>
                     <li><a href="">PODCAST</a></li>
@@ -24,7 +94,7 @@
 
                 <h1>Recently played</h1>
 
-                <div class="recently-played display-flex">
+                <div class="recently-played display-flex flex-wrap">
                     <figure>
                         <img src="spotify/img/metal_lifting.jpg" alt="" />
                         <figcaption>
@@ -114,6 +184,7 @@
                     </figure>
                 </div>
             </main>
+
             <footer class="pst-absolute bg-gray-light"></footer>
         </div>
     </body>
