@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    font-family: sans-serif;
 }
 
 h1 {
@@ -21,12 +23,20 @@ h1 {
     justify-content: center;
 }
 
+.justify-ct-sb {
+    justify-content: space-between;
+}
+
 .align-it-center {
     align-items: center;
 }
 
 .flex-wrap {
     flex-wrap: wrap;
+}
+
+.flex-di-column {
+    flex-direction: column;
 }
 
 .pst-absolute {
@@ -50,6 +60,10 @@ h1 {
 
 .bg-black {
     background-color: black;
+}
+
+.c-white {
+    color: rgb(255, 255, 255);
 }
 
 .bg-black-transparent {
@@ -217,3 +231,76 @@ figcaption :is(span) {
         display: none;
     }
 }
+
+footer img {
+    height: 100%;
+    width: 5%;
+}
+
+/* bars */
+
+.bars,
+.time-lenght {
+    height: 4px;
+    border-radius: 2rem;
+}
+
+.bars {
+    width: 100%;
+    background-color: #000000;
+}
+
+.time-lenght {
+    width: 50%;
+    background-color: #c1c1c1;
+}
+
+.pointer {
+    height: 15px;
+    width: 15px;
+    background-color: rgb(255, 255, 255);
+    right: 50%;
+
+    transform: translate(10px, -7px) scale(0);
+
+    transition: all ease-in-out 0.2s;
+}
+
+.bars:hover .pointer {
+    transform: translate(7.5px, -5.5px) scale(1);
+}
+
+.time-lenght:hover {
+    background-color: rgb(87, 211, 87);
+    transition: all ease-in-out 0.2s;
+}
+
+/* / bars */
+
+/* footer */
+
+.commands {
+    width: 100%;
+    height: 40px;
+
+    gap: 30px;
+}
+
+.commands :is(.fa-solid) {
+    font-size: 1.5rem;
+}
+
+.fa-circle-play {
+    transform: scale(1.5);
+}
+
+.bars-container {
+    width: 100%;
+    gap: 20px;
+}
+
+.block-center {
+    width: 40%;
+}
+
+/* footer */
