@@ -12,6 +12,10 @@ h1 {
 
 /* utility */
 
+.gap-20 {
+    gap: 20px;
+}
+
 .display-none {
     display: none;
 }
@@ -25,6 +29,10 @@ h1 {
 
 .justify-ct-sb {
     justify-content: space-between;
+}
+
+.justify-ct-sa {
+    justify-content: space-around;
 }
 
 .align-it-center {
@@ -67,11 +75,11 @@ h1 {
 }
 
 .bg-black-transparent {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.801);
 }
 
 .bg-gray {
-    background-color: #343841;
+    background-color: #141922;
 }
 
 .bg-gray-light {
@@ -87,24 +95,101 @@ h1 {
 }
 
 aside {
-    height: calc(100% - 80px);
-    padding: 20px 70px 0px 20px;
+    height: calc(100% - 100px);
+    padding: 20px 0px 0px 0px;
+
+    z-index: 200;
 }
 
-aside :is(h1, h2, h3, h4, h5, h6) {
+aside img {
+    width: 30px;
+    height: auto;
+
+    margin: 0px 5px 0px 10px;
+}
+
+aside h3 {
+    font-size: 0.8rem;
     color: #7d7f84;
-    font-size: 1rem;
+    margin: 0px 120px 20px 10px;
+
     white-space: nowrap;
 }
 
-aside li > img {
-    width: 30px;
-    height: auto;
+.create-play h3 {
+    margin: 2px;
+    font-size: 1rem;
+}
+
+aside h2 {
+    font-size: 0.8rem;
+    color: #ffffff;
+    margin: 20px 0px 5px 10px;
+}
+
+aside h3:hover,
+aside a:hover {
+    color: white;
+}
+
+aside a {
+    font-size: 0.8rem;
+    color: #7d7f84;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 10px 0px;
+}
+
+aside .fa-square-plus {
+    font-size: 3rem;
+    margin: 0px 10px 20px 10px;
+}
+
+aside li {
+    border-left: 3px solid rgba(87, 211, 87, 0);
+}
+aside li:hover {
+    border-left: 3px solid rgb(87, 211, 87);
 }
 
 .user {
+    width: 100%;
     bottom: 0;
     left: 0;
+
+    padding-bottom: 10px;
+}
+
+.create-play {
+    margin-bottom: 20px;
+}
+.user h2 {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.user img {
+    width: 20px;
+}
+
+hr {
+    width: 90%;
+    margin: 5px auto;
+}
+
+.profile {
+    width: 30px;
+    height: 30px;
+    margin: 0px 5px 0px 10px;
+
+    background: url(spotify/img/profile.svg), linear-gradient(#525252, #525252);
+    background-size: cover;
+}
+
+aside .fa-solid.fa-square-plus {
+    color: #828282;
+    height: 100%;
+    margin: 0 0 0 10px;
 }
 
 .fa-solid {
@@ -117,12 +202,26 @@ main {
 
     overflow-y: scroll;
 
-    /* padding: 0px 20px 0px 20px; */
+    padding: 0px 20px 200px 20px;
+}
+
+main h1 {
+    font-size: 1.6rem;
+    margin: 30px 0px 20px 0px;
+}
+
+main h3 {
+    font-size: 0.8rem;
+    margin: 30px 0px;
+    color: #7d7f84;
+    margin: 0px 0px 30px 0px;
 }
 
 .top-bar {
     width: 100%;
     height: 80px;
+
+    z-index: 100;
 }
 
 .top-bar button {
@@ -130,10 +229,17 @@ main {
     border: 1px solid white;
     background: none;
     border-radius: 4rem;
-    padding: 15px 40px;
+    padding: 10px 30px;
     color: white;
+    font-size: 0.8rem;
 
     margin-right: 30px;
+
+    transition: all ease-in-out 0.2s;
+}
+
+.top-bar button:hover {
+    transform: scale(1.1);
 }
 
 .top-bar > div {
@@ -142,11 +248,13 @@ main {
 
 footer {
     width: 100%;
-    height: 80px;
+    height: 100px;
 
     /*  absolute */
     bottom: 0;
     left: 0;
+
+    z-index: 300;
 }
 
 main ul {
@@ -157,8 +265,26 @@ main ul {
     padding: 15px 0px;
 }
 
+main li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main li :is(span) {
+    height: 3px;
+    width: 0%;
+    margin-top: 5px;
+    background-color: rgb(87, 211, 87);
+    transition: all ease-in-out 0.2s;
+}
+
+main li:hover :is(span) {
+    width: 50%;
+}
+
 main ul :is(a) {
-    color: white;
     text-decoration: none;
 
     font-size: 0.8rem;
@@ -167,7 +293,7 @@ main ul :is(a) {
 
 figure {
     width: calc(100% / 6 - 10px);
-    height: auto;
+    height: fit-content;
 
     padding: 0;
     margin: 0;
@@ -177,15 +303,43 @@ figure :is(img) {
     width: 100%;
 }
 
+figure :is(.overlay) {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+
+    transition: all ease-out 0.1s;
+    transform: scale(0.2);
+}
+
+figure:hover .overlay {
+    opacity: 1;
+    transform: scale(1);
+}
+
+figure:hover img {
+    filter: brightness(40%);
+}
+
+figure :is(.fa-solid) {
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
 figcaption {
     color: white;
-    font-size: 1.4rem;
-    margin-top: 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 20px;
     text-align: center;
 }
 
 figcaption :is(span) {
-    font-size: 1rem;
+    font-size: 0.8rem;
+    color: #7d7f84;
 }
 
 .recently-played {
@@ -195,7 +349,13 @@ figcaption :is(span) {
 }
 
 .logo-short {
+    margin-bottom: 30px;
     display: none;
+}
+
+.logo-regular {
+    margin-bottom: 30px;
+    width: 70%;
 }
 
 /* tablet */
@@ -205,36 +365,58 @@ figcaption :is(span) {
     }
 }
 
-/* mobile */
-@media screen and (max-width: 450px) {
+/* pre-mobile */
+@media screen and (max-width: 550px) {
     figure {
         width: calc(100% / 2 - 10px);
     }
+}
 
+/* mobile */
+@media screen and (max-width: 450px) {
     aside h1,
     h3,
     h2,
     a,
-    .create-play {
+    .create-play,
+    hr {
         display: none;
-    }
-
-    aside {
-        padding: 10px 10px 0px 10px;
     }
 
     .logo-short {
         display: block;
+        width: 100%;
     }
 
     .logo-regular {
         display: none;
     }
+
+    aside * {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        border: 0 !important;
+
+        padding: 0px 3px;
+    }
+
+    .user img,
+    .user .profile {
+        margin: 10px 0px;
+    }
+
+    .user > div {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+footer {
+    color: white;
 }
 
 footer img {
-    height: 100%;
-    width: 5%;
+    height: 60%;
 }
 
 /* bars */
@@ -287,11 +469,24 @@ footer img {
 }
 
 .commands :is(.fa-solid) {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .fa-circle-play {
     transform: scale(1.5);
+}
+
+.fa-heart,
+.fa-folder {
+    color: rgb(131, 131, 131);
+}
+
+.fa-folder:hover {
+    color: white;
+}
+
+.bars .fa-regular.fa-heart:hover {
+    color: white;
 }
 
 .bars-container {
@@ -299,8 +494,16 @@ footer img {
     gap: 20px;
 }
 
+.block-left {
+    width: 20%;
+}
+
 .block-center {
     width: 40%;
+}
+
+.block-right {
+    width: 20%;
 }
 
 /* footer */
