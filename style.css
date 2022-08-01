@@ -101,11 +101,42 @@ aside {
     z-index: 200;
 }
 
+aside.mobile {
+    width: 60px;
+    flex-shrink: 0;
+
+    padding-bottom: 20px;
+
+    display: none;
+}
+
+aside.mobile * {
+    margin: 0;
+    border: none;
+
+    z-index: 200;
+}
+
+/* pre- mobile */
+@media screen and (max-width: 500px) {
+    aside.mobile {
+        display: flex;
+    }
+
+    aside {
+        display: none;
+    }
+}
+
 aside img {
     width: 30px;
     height: auto;
 
     margin: 0px 5px 0px 10px;
+}
+
+.logo-small {
+    padding-bottom: 30px;
 }
 
 aside h3 {
@@ -198,7 +229,7 @@ aside .fa-solid.fa-square-plus {
 
 main {
     height: 100%;
-    flex-grow: 1;
+    /* flex-grow: 1; */
 
     overflow-y: scroll;
 
@@ -365,49 +396,10 @@ figcaption :is(span) {
     }
 }
 
-/* pre-mobile */
+/* pre- mobile */
 @media screen and (max-width: 550px) {
     figure {
         width: calc(100% / 2 - 10px);
-    }
-}
-
-/* mobile */
-@media screen and (max-width: 450px) {
-    aside h1,
-    h3,
-    h2,
-    a,
-    .create-play,
-    hr {
-        display: none;
-    }
-
-    .logo-short {
-        display: block;
-        width: 100%;
-    }
-
-    .logo-regular {
-        display: none;
-    }
-
-    aside * {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        border: 0 !important;
-
-        padding: 0px 3px;
-    }
-
-    .user img,
-    .user .profile {
-        margin: 10px 0px;
-    }
-
-    .user > div {
-        justify-content: center;
-        width: 100%;
     }
 }
 
