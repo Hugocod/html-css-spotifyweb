@@ -457,7 +457,7 @@ footer img {
     width: 100%;
     height: 40px;
 
-    gap: 30px;
+    gap: 20px;
 }
 
 .commands :is(.fa-solid) {
